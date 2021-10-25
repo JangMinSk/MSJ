@@ -2,11 +2,12 @@
 package Frd;
 import java.util.Scanner;
 public class Test12 {
+	
 	public static void main(String[] args) {
 		System.out.println("나눌때 0을넣지마세요..ㅠ");
 		int a=0;
 		int b=0;
-		String aa="";
+		String aa;
 		Scanner scn=new Scanner(System.in);
 		
 		System.out.print("첫번째 값 :");
@@ -18,10 +19,17 @@ public class Test12 {
 		System.out.print("두번째 값 :");
 		b=scn.nextInt();
 		
-		switch(a+b) {
-			
-		System.out.print(a+"+"+b+"="+(a+b));
-		}
+		switch(aa) {
+		case "+":
+			System.out.println(a+"+"+b+"="+(a+b));
+		case "-":
+			System.out.println(a+"-"+b+"="+(a-b));
+		case "*":
+			System.out.println(a+"*"+b+"="+(a*b));
+		case "/":
+			System.out.println(a+"/"+b+"="+(a/b));
+			}
+		scn.close();
 		
 //		if (aa.equals("+")) {
 //			System.out.println(a+"+"+b+ "=" +(a+b));
@@ -39,11 +47,6 @@ public class Test12 {
 //		}
 //		}
 //		scn.close();
-			
 		
-		
-		
-
 	}
-
-}
+	}
