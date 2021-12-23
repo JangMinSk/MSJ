@@ -1,0 +1,26 @@
+package action;
+
+import java.util.Scanner;
+
+import svc.MemberUpdateService;
+import util.ConsoleUtil;
+import vo.Member;
+
+public class MemberUpdateAction implements Action {
+	@Override
+	public void execute(Scanner scan) {
+		ConsoleUtil consoleUtil = new ConsoleUtil();
+		
+		String id = consoleUtil.getId("취소하려면 아무키나 누르세요 \n수정할", scan);
+		MemberUpdateService memberUpdateService = new MemberUpdateService();
+
+		Member oldMember = memberUpdateService.getOldMember(id);
+		Member newMember = consoleUtil.getNewMember(oldMember, scan);
+		boolean updateSuccess = memberUpdateService.updateMember(newMember);
+		if (updateSuccess) {
+			consoleUtil.printUpdateSuccessMessage(newMember.getId());
+		} else {
+			consoleUtil.printUpdateFailMessage(newMember.getId());
+		}
+	}
+}
