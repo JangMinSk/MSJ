@@ -1,0 +1,45 @@
+package hl;
+
+
+
+interface a{
+	int b(int b);
+}
+class shpe{
+	
+	
+	 void draw() {
+		System.out.println("mother");
+	}
+	
+}
+
+class line extends shpe implements a{
+	line(){	
+	}
+	@Override
+	public int b(int b) {
+		return b;
+	}
+		
+	 void draw() {
+		 super.draw();//슈퍼 부모한테 간다. 부모 매서드 돌고 다시 돌아와서 일을 마저함.
+		for(int i=0;i<10;i++) {
+			if(a.equals("아")) {
+				
+				System.out.println("===");
+			}
+	}
+
+
+}
+public class chu {
+
+	public static void main(String[] args) {
+		line line = new line();
+		line.draw();
+		
+		shpe a = new line();
+		a.draw();
+	}
+}

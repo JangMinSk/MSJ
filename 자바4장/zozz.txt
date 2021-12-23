@@ -1,0 +1,79 @@
+package hl;
+class ani {
+	String name;
+	int age;//객체 필드;
+	int leg;
+	
+	ani(){}
+
+	ani(int age) {
+		this.age=age;
+	}
+	
+	void setage(int age){//클레스 함수
+		this.age=age;
+	}
+	
+	void setname(String name){//클레스함수
+		this.name=name;//name을 입력받으면 해당 객체의 name=name;
+	}
+	
+	void cry(){//클래스 함수
+		  System.out.println("왈");
+	}
+	void setleg(int leg) {
+		this.leg=leg;
+	}
+}
+class dog extends ani{
+	dog(){}
+	dog(int age){//생성자매개변수 받는 (리턴타입 없는)
+		this.age=age;
+	}
+	void cry() {//오버라이딩 (데이터타입 ,이름,매개변수 동일하지만 하는역할이 다름.)
+	
+		System.out.println("흙");
+	}
+}
+class cat extends ani{
+	void cry() {
+		System.out.println("냐옹");
+	}
+	void setleg(int leg,int age) {//오버로딩(함수이름만 같고 나머진 다름)
+		this.leg=leg;
+		this.age=age;
+	}
+}
+class mon extends ani{
+	void cry() {
+		System.out.println("우끼");
+	}
+}
+public class zoz {
+
+	public static void main(String[] args) {
+		ani ani= new ani();
+		dog dog= new dog();
+		cat cat= new cat();
+		mon mon= new mon();
+		dog dg= new dog(10);
+		dog.setage(3);
+		mon.setname("시저");
+		ani.cry();
+		dog.cry();
+		cat.cry();
+		mon.cry();
+		ani.setleg(4);
+		System.out.println(ani.leg);
+		ani.setleg(5);
+		System.out.println(ani.leg);
+		ani.setleg(6);
+		System.out.println(ani.leg);
+		cat.setleg(1);
+		System.out.println(cat.leg);
+		cat.setleg(4,2);
+		System.out.print(cat.leg+" "+cat.age);
+		dog.setname("바둑이");
+	}
+
+}
